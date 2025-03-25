@@ -1,5 +1,6 @@
 import ProductsList from '../../components/ProductsList/productslist-index'
 import Banner from '../../components/Banner/banner-index'
+import HeaderCart from '../../components/HeaderCart/headerCart-index'
 import { useGetFeatureEfoodQuery } from '../../services/api'
 import { useParams } from 'react-router-dom'
 
@@ -17,6 +18,7 @@ const RestaurantPlates = () => {
 
   return (
     <>
+      <HeaderCart />
       <Banner />
       <ProductsList pratos={pratosDisponiveis.cardapio} />
     </>
