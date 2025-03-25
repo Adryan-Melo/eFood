@@ -1,0 +1,26 @@
+import ProductsList from '../../components/ProductsList/productslist-index'
+import Banner from '../../components/Banner/banner-index'
+import { useGetFeatureEfoodQuery } from '../../services/api'
+import { useParams } from 'react-router-dom'
+
+type CardapioParams = {
+  id: string
+}
+
+const RestaurantPlates = () => {
+  const { id } = useParams() as CardapioParams
+  const { data: pratosDisponiveis } = useGetFeatureEfoodQuery(id)
+
+  if (!pratosDisponiveis) {
+    return <h4>Carregando...</h4>
+  }
+
+  return (
+    <>
+      <Banner />
+      <ProductsList pratos={pratosDisponiveis.cardapio} />
+    </>
+  )
+}
+
+export default RestaurantPlates
