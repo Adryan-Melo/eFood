@@ -36,7 +36,7 @@ export const formataPreco = (preco = 0) => {
 
 
 const Product = ({ nome, descricao, foto, porcao, preco }: Props) => {
-  const [modalAberto, SetModalAberto] = useState(false)
+  const [modalAberto, SetModalAberto] = useState(true)
   const dispatch = useDispatch()
 
   const items = useSelector(
