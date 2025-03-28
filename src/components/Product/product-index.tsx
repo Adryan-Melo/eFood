@@ -36,7 +36,7 @@ export const formataPreco = (preco = 0) => {
 
 
 const Product = ({ nome, descricao, foto, porcao, preco }: Props) => {
-  const [modalAberto, SetModalAberto] = useState(true)
+  const [modalAberto, SetModalAberto] = useState(false)
   const dispatch = useDispatch()
 
   const items = useSelector(
@@ -77,7 +77,7 @@ const Product = ({ nome, descricao, foto, porcao, preco }: Props) => {
         <img src={foto} alt={nome} />
         <Titulo>{nome}</Titulo>
         <Descricao>{getDescricao(descricao)}</Descricao>
-        <ButtonContainer onClick={() => SetModalAberto(false)}>
+        <ButtonContainer onClick={() => SetModalAberto(true)}>
           Adicionar ao carrinho
         </ButtonContainer>
       </Card>
