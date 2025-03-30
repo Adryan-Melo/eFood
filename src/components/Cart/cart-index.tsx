@@ -10,6 +10,7 @@ import {
   Prices
 } from './cart-styles'
 import { getTotalPrice, parseToBrl } from '../../utils/utils-index'
+import Button from '../Button/button-index'
 
 
 const Cart = () => {
@@ -59,11 +60,13 @@ const Cart = () => {
               <Prices>
                 Valor Total <span>{parseToBrl(getTotalPrice(items))}</span>
               </Prices>
-             <button>
-             Continuar com a entrega
-             </button>
-                
 
+             <Button 
+                onClick={goToCheckout}
+                type="button"
+                title="Clique aqui para continuar com a compra"> 
+             Continuar com a entrega
+             </Button>
             </>
           )}
         </Sidebar>
