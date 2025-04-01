@@ -11,7 +11,7 @@ import {
 } from './cart-styles'
 import { getTotalPrice, parseToBrl } from '../../utils/utils-index'
 import Button from '../Button/button-index'
-
+import Checkout from '../../pages/Checkout/checkout-index'
 
 const Cart = () => {
 
@@ -69,6 +69,7 @@ const Cart = () => {
              </Button>
             </>
           )}
+          {showCheckout && <Checkout onClose={() => setShowCheckout(false)} />}
         </Sidebar>
       </CartContainer>
     </>
